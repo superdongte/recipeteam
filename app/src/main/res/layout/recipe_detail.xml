@@ -89,17 +89,18 @@
         android:layout_height="match_parent"
         android:layout_alignTop="@id/txtView"
         android:layout_alignParentTop="false"
-        android:layout_marginTop="83dp"
+        android:layout_marginTop="43dp"
         android:orientation="vertical"
         android:gravity="center">
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="319dp"
-            android:layout_height="match_parent"
+            android:layout_width="320dp"
+            android:layout_height="304dp"
             android:background="@drawable/backgound_round_white"
-            android:textAlignment="center"
-            android:text="내용" />
+            android:text="내용"
+            android:textAlignment="center" />
     </LinearLayout>
+
 
 </RelativeLayout>

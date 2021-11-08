@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/drawable/backgound_round_white.xml" value="0.32222222222222224" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/drawable/ic_account_circle.xml" value="0.32222222222222224" />
+        <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.275" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/drawable/ic_set_meal.xml" value="0.275" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/activity_board_main.xml" value="0.16590678824721378" />
@@ -17,7 +18,7 @@
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/item_comment.xml" value="0.16590678824721378" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/item_post.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/join.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/recipe_detail.xml" value="0.4457831325301205" />
+        <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/recipe_detail.xml" value="0.5" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/layout/recipe_post.xml" value="0.3515625" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/recipeteam/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22083333333333333" />
