@@ -10,6 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import android.content.DialogInterface
+import android.os.Process
+
 
 class JoinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +25,19 @@ class JoinActivity : AppCompatActivity() {
         var Edtpassword=findViewById<EditText>(R.id.EdtPassword)
         var EdtConPassword=findViewById<EditText>(R.id.EdtPasswordCheck)
         var EdtJoin=findViewById<Button>(R.id.btnJoin)
-        var behind=findViewById<Button>(R.id.btnBehind)
+        var btnBehind=findViewById<Button>(R.id.btnBehind)
         var isSamePassword=false //패스워드 확인체크
         var isBlank=false // 비워져 있는지 확인
+        var dlg=AlertDialog.Builder(this@JoinActivity)
+
+        val intent=Intent(this,loginActivity::class.java)
+
+        btnBehind.setOnClickListener{
+
+            startActivity(intent)
+        }
+
+
 
 
         EdtJoin.setOnClickListener {
@@ -32,7 +45,14 @@ class JoinActivity : AppCompatActivity() {
             var pass2:String=EdtConPassword.text.toString()
             var id:String=EdtId.text.toString()
             var Email:String=Edtemail.text.toString()
-            var dlg=AlertDialog.Builder(this@JoinActivity)
+
+
+
+
+
+
+
+
 
             if(id.isEmpty()||pass1.isEmpty()||pass2.isEmpty()||Email.isEmpty()){
                 var isBlank=true //비어있는가 확인
@@ -50,9 +70,19 @@ class JoinActivity : AppCompatActivity() {
                         dlg.setTitle("Confirm")
                         dlg.setMessage("회원가입하시겠습니까")
                         dlg.setIcon(R.mipmap.ic_launcher)
-                        dlg.setPositiveButton("OK",null)
+                        dlg.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+                            startActivity(intent)
+                            finish()
+                        })
                         dlg.setNegativeButton("CANCEL",null)
                         dlg.show()
+
+
+
+
+
+
+
                     }
 
 
@@ -70,7 +100,6 @@ class JoinActivity : AppCompatActivity() {
 
 
 
-            var intent= Intent(this,MainActivity::class.java)
 
 
 
@@ -83,4 +112,7 @@ class JoinActivity : AppCompatActivity() {
 
 
     }
+
+
+
 }
