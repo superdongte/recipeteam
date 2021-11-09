@@ -1,4 +1,4 @@
-package com.example.recipeteam.model;
+package com.example.recipeteam.board;
 
 public class Comment {
     public String uid;

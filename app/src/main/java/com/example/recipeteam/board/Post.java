@@ -1,4 +1,4 @@
-package com.example.recipeteam.model;
+package com.example.recipeteam.board;
 
 import java.util.Date;
 import java.util.HashMap;
