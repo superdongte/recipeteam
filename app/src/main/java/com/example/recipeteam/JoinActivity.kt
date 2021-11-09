@@ -1,5 +1,6 @@
 package com.example.recipeteam
 
+
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -56,8 +57,8 @@ class JoinActivity : AppCompatActivity() {
 
 
 
-             
-                    
+
+
                 }
 
 
@@ -69,7 +70,7 @@ class JoinActivity : AppCompatActivity() {
 
 
 
-            var intent= Intent(this,JoinActivity::class.java)
+            var intent= Intent(this,MainActivity::class.java)
 
 
 

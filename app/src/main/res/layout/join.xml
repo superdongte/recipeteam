@@ -5,161 +5,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".JoinActivity"
-    android:orientation="vertical"
-    android:background="@color/main_background">
+    android:orientation="vertical">
 
-
-    <ImageView
-        android:layout_marginTop="80dp"
-        android:id="@+id/imageView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_action_account_circle_40" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:textSize="34dp"
-        android:letterSpacing="0.2"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
-        />
-
-    <TableLayout
-        android:layout_width="354dp"
-        android:layout_height="276dp"
-        android:layout_margin="30dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="아이디" />
-
-
-            <EditText
-                android:id="@+id/EditID"
-                android:layout_width="200dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/backgound_round_white"
-                android:drawableLeft="@drawable/ic_account_circle" />
-
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="이메일" />
-
-            <EditText
-                android:id="@+id/EdtEmail"
-                android:layout_width="200dp"
-
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/backgound_round_white"
-                android:drawableLeft="@drawable/ic_baseline_email_24" />
-
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="비밀번호" />
-
-
-            <EditText
-                android:id="@+id/EdtPassword"
-                android:layout_width="match_parent"
-
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/backgound_round_white"
-                android:drawableLeft="@drawable/ic_baseline_vpn_key_24" />
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="비밀번호확인" />
-
-
-            <EditText
-                android:id="@+id/EdtPasswordCheck"
-                android:layout_width="match_parent"
-
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/backgound_round_white"
-                android:drawableLeft="@drawable/ic_baseline_lock_24" />
-
-
-        </TableRow>
-
-    </TableLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="14dp"
-        android:background="#beaea1"
-        android:orientation="vertical"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp">
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditID"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EdtEmail"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EdtPassword"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호확인" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EdtPasswordCheck"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
             android:text="뒤로가기"
             android:id="@+id/btnBehind"/>
 
 
         <Button
-            android:id="@+id/btnJoin"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:background="#CD4949"
-            android:text="회원가입" />
+            android:id="@+id/btnJoin"
+            android:text="회원가입"/>
 
 
     </LinearLayout>
+
+
+
+
+
+
 
 
 </LinearLayout>
