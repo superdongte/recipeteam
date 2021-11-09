@@ -2,6 +2,7 @@ package com.example.recipeteam
 
 
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,11 +50,6 @@ class JoinActivity : AppCompatActivity() {
 
 
 
-
-
-
-
-
             if(id.isEmpty()||pass1.isEmpty()||pass2.isEmpty()||Email.isEmpty()){
                 var isBlank=true //비어있는가 확인
                 dlg.setMessage("모든 내용을 다입력하세요")
@@ -66,6 +62,15 @@ class JoinActivity : AppCompatActivity() {
 
 
                     if(isBlank==false && isSamePassword==true){
+
+
+                        val sharedPreference = getSharedPreferences("file name", Context.MODE_PRIVATE)
+                        val editor = sharedPreference.edit()
+                        editor.putString("id", id)
+                        editor.putString("pw", pass1)
+                        editor.apply()
+
+
 
                         dlg.setTitle("Confirm")
                         dlg.setMessage("회원가입하시겠습니까")
