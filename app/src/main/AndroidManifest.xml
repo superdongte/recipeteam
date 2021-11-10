@@ -9,33 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Recipeteam">
-
+        <activity
+            android:name=".RecipeDetail"
+            android:exported="false" />
+        <activity
+            android:name=".BoardList"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeRegister"
+            android:exported="false" />
+        <activity
+            android:name=".ReceiptRegister"
+            android:exported="false" />
+        <activity
+            android:name=".CookrecipeList"
+            android:exported="false" />
+        <activity
+            android:name=".cookReciperList"
+            android:exported="false" />
         <activity
             android:name=".loginActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
         <activity
             android:name=".JoinActivity"
-            android:exported="true">
-
-
-        </activity>
-
-
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
