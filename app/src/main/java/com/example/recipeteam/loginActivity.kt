@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.example.recipeteam.board.BoardActivity
 
 class loginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +39,8 @@ class loginActivity : AppCompatActivity() {
 
            if(pass1 == savedId && pass2 == savedPassword){
                 // 로그인 성공 다이얼로그 보여주기
-                dlg.setTitle("Confirm")
-               dlg.setMessage("성공했습니다")
-              dlg.setIcon(R.mipmap.ic_launcher)
-               dlg.show()
+               val intent= Intent(this, MainActivity::class.java)
+               startActivity(intent)
             }
             else{
                 // 로그인 실패 다이얼로그 보여주기
