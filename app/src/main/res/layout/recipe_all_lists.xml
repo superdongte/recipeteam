@@ -4,18 +4,28 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/main_background">
+    android:background="@color/main_background"
+    android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="250dp"
-        android:layout_height="34dp"
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="111dp"
         android:gravity="center"
-        android:text="요리 레시피 리스트"
-        android:textSize="26dp"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="250dp"
+            android:layout_height="34dp"
+            android:gravity="center"
+            android:text="요리 레시피 리스트"
+            android:textSize="26dp"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="57dp" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerRecipeLists"
@@ -23,6 +33,7 @@
         android:layout_height="617dp"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="114dp"
-        tools:listitem="@layout/recipe_item_list" />
+        tools:listitem="@layout/recipe_item_list"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
