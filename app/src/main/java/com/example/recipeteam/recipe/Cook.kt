@@ -6,7 +6,7 @@ import android.os.Parcelable
 data class Cook (
     var cookid: Int,
     var cname: String,
-    var cimage: String,
+    var cimage: String?,
     var crecipe: String,
     var cookcontent: String,
     var crank: Int
@@ -21,7 +21,7 @@ data class Cook (
     )
 
     override fun describeContents(): Int {
-        TODO("Not yet implemented")
+        return 0
     }
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
