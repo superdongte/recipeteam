@@ -25,12 +25,12 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.board_list)
+        setContentView(R.layout.activity_board_main)
 
         var container = findViewById<ViewPager>(R.id.container)
         var tabs = findViewById<TabLayout>(R.id.tabs)
         var flbtn = findViewById<FloatingActionButton>(R.id.fabNewPost)
-        var boardRecyclerView: RecyclerView = findViewById(R.id.messagesList)
+        var boardRecyclerView: RecyclerView = findViewById(R.id.recyclerBoardList)
 
         tabs.addTab(tabs.newTab().setText("게시글"))
         tabs.addTab(tabs.newTab().setText("내가 쓴 글"))
