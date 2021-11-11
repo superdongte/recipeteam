@@ -11,11 +11,15 @@ class CookListAcitivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recipe_all_lists)
 
-        val cookList = arrayListOf(
+        /*val cookList = arrayListOf(
             CookView("title" ,R.drawable.ic_baseline_account_circle_24),
             CookView("title" ,R.drawable.ic_baseline_account_circle_24),
             CookView("title" ,R.drawable.ic_baseline_account_circle_24),
             CookView("title" ,R.drawable.ic_baseline_account_circle_24)
+        )*/
+
+        val cookList = arrayListOf(
+            Cook(1234, "cname", "cimage", "crecipe", "cookcontent", 1)
         )
 
         var recyclerView : RecyclerView = findViewById(R.id.recyclerRecipeLists)

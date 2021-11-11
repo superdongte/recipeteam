@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
 
-class CookAdapter(val cookList: ArrayList<CookView>) : RecyclerView.Adapter<CookAdapter.CustomViewHolder>() {
+class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdapter.CustomViewHolder>() {
 
 
     override fun onCreateViewHolder(

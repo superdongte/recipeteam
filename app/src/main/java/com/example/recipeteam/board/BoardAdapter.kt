@@ -1,6 +1,7 @@
 package com.example.recipeteam.board
 
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.text.Layout
 import android.view.LayoutInflater
@@ -8,10 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
+import com.example.recipeteam.RecipeDetail
 
-class BoardAdapter(val postList: ArrayList<PostView>) :
+class BoardAdapter(val postList: ArrayList<Post>) :
 RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,6 +27,12 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
         holder.author.text = postList.get(position).author
         holder.title.text = postList.get(position).title
         holder.content.text = postList.get(position).content
+
+        holder.itemView.setOnClickListener {
+            var intent = Intent(holder.itemView?.context, RecipeDetail::class.java)
+            intent.putExtra("postList", postList)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int {

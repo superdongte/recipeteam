@@ -41,11 +41,15 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }
 
-        var postList = arrayListOf(
+        /*var postList = arrayListOf(
             PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content"),
             PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content"),
             PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content"),
             PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content")
+        )*/
+
+        var postList = arrayListOf(
+            Post("uid", "author", "title", "content", "20211111")
         )
 
         boardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -57,6 +61,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+/*
 
    private fun request() {
         val baseURL = ""
@@ -80,6 +85,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
     }
+*/
 
 
     override fun onClick(p0: View?) {

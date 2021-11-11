@@ -7,5 +7,7 @@ class RecipeDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recipe_detail)
+
+
     }
 }
