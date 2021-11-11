@@ -1,12 +1,16 @@
 package com.example.recipeteam.recipe
 
+import android.content.Intent
+import android.os.Parcel
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
+import com.example.recipeteam.RecipeDetail
 
 class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdapter.CustomViewHolder>() {
 
@@ -22,6 +26,14 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
     override fun onBindViewHolder(holder: CookAdapter.CustomViewHolder, position: Int) {
         holder.cimg.setImageResource(R.drawable.ic_baseline_account_circle_24)
         holder.cname.text = cookList.get(position).cname
+
+        holder.itemView.setOnClickListener {
+
+            var intent = Intent(holder.itemView?.context, RecipeDetail::class.java)
+            intent.putExtra("cname", holder.cname.text)
+            intent.putParcelableArrayListExtra("cookList", cookList)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -33,7 +45,11 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
         val cimg = itemView.findViewById<ImageView>(R.id.recipe_img)
 
 
+
+
+
     }
+
 
 
 }

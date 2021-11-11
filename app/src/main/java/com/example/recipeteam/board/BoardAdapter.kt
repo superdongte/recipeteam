@@ -28,11 +28,7 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
         holder.title.text = postList.get(position).title
         holder.content.text = postList.get(position).content
 
-        holder.itemView.setOnClickListener {
-            var intent = Intent(holder.itemView?.context, RecipeDetail::class.java)
-            intent.putExtra("postList", postList)
-            ContextCompat.startActivity(holder.itemView.context, intent, null)
-        }
+
     }
 
     override fun getItemCount(): Int {

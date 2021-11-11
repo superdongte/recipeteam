@@ -35,6 +35,9 @@
         <activity
             android:name=".board.PostActivity"
             android:exported="true" />
+        <activity
+            android:name=".RecipeDetail"
+            android:exported="true" />
     </application>
 
 </manifest>
