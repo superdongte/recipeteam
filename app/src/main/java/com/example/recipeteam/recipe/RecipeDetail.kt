@@ -1,10 +1,9 @@
-package com.example.recipeteam
+package com.example.recipeteam.recipe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.core.content.contentValuesOf
-import com.example.recipeteam.recipe.Cook
+import com.example.recipeteam.R
 
 class RecipeDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -36,7 +36,10 @@
             android:name=".board.PostActivity"
             android:exported="true" />
         <activity
-            android:name=".RecipeDetail"
+            android:name=".recipe.RecipeDetail"
+            android:exported="true" />
+        <activity
+            android:name=".board.BoardDetail"
             android:exported="true" />
     </application>
 

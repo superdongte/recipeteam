@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import com.example.recipeteam.recipe.RecipeDetail
 
 class CookrecipeList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +15,7 @@ class CookrecipeList : AppCompatActivity() {
 
 
         Imgsea.setOnClickListener {
-            val intent= Intent(this,RecipeDetail::class.java)
+            val intent= Intent(this, RecipeDetail::class.java)
             startActivity(intent)
         }
     }

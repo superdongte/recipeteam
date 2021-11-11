@@ -1,7 +1,6 @@
 package com.example.recipeteam.recipe
 
 import android.content.Intent
-import android.os.Parcel
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
-import com.example.recipeteam.RecipeDetail
 
 class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdapter.CustomViewHolder>() {
 
