@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
-    val postList = ArrayList<Post>()
+    var postList = ArrayList<Post>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +48,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content")
         )*/
 
-        var postList = arrayListOf(
+        postList = arrayListOf(
             Post("uid", "author", "title", "content", "20211111")
         )
 
@@ -60,6 +60,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
 
     }
+
 
 /*
 
@@ -78,6 +79,12 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         service.getPostList().enqueue(object: Callback<PostList>{
             override fun onResponse(call: Call<PostList>, response: Response<PostList>) {
                 var postList1 = response.body()
+                for(i in 0..postList1!!.datas.size-1) {
+                    postList = arrayListOf(
+                        Post(postList1!!.datas.get(i).uid, postList1!!.datas.get(i).author, postList1!!.datas.get(i).title,
+                            postList1!!.datas.get(i).content, postList1!!.datas.get(i).regdate)
+                    )
+                }
             }
 
             override fun onFailure(call: Call<PostList>, t: Throwable) {
@@ -86,6 +93,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 */
+
 
 
     override fun onClick(p0: View?) {
