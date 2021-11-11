@@ -2,6 +2,7 @@ package com.example.recipeteam.recipe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
 
@@ -18,6 +19,9 @@ class CookListAcitivity : AppCompatActivity() {
         )
 
         var recyclerView : RecyclerView = findViewById(R.id.recyclerRecipeLists)
+
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.setHasFixedSize(true)
         recyclerView.adapter = CookAdapter(cookList)
     }
 }

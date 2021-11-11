@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
 
-class BoardAdapter(val postList: ArrayList<PostList>) :
+class BoardAdapter(val postList: ArrayList<PostView>) :
 RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,9 +21,9 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.authimg.setImageResource(R.drawable.ic_action_account_circle_40)
-        holder.author.text = postList.get(position).toString()
-        holder.title.text = postList.get(position).toString()
-        holder.content.text = postList.get(position).toString()
+        holder.author.text = postList.get(position).author
+        holder.title.text = postList.get(position).title
+        holder.content.text = postList.get(position).content
     }
 
     override fun getItemCount(): Int {

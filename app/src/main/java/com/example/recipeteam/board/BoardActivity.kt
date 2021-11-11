@@ -23,8 +23,6 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
     val postList = ArrayList<Post>()
 
-    private lateinit var boardAdapter: BoardAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.board_list)
@@ -43,12 +41,17 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }
 
+        var postList = arrayListOf(
+            PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content"),
+            PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content"),
+            PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content"),
+            PostView(R.drawable.ic_baseline_account_circle_24, "author", "title", "content")
+        )
 
-/*
         boardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         boardRecyclerView.setHasFixedSize(true)
 
-        boardRecyclerView.adapter = boardAdapter*/
+        boardRecyclerView.adapter = BoardAdapter(postList)
 
     }
 /*
