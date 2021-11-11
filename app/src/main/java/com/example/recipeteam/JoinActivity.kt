@@ -76,6 +76,7 @@ class JoinActivity : AppCompatActivity() {
                         dlg.setMessage("회원가입하시겠습니까")
                         dlg.setIcon(R.mipmap.ic_launcher)
                         dlg.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+                            intent.putExtra("Email", Email)
                             startActivity(intent)
                             finish()
                         })

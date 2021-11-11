@@ -1,7 +1,7 @@
 package com.example.recipeteam.board
 
-import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
@@ -11,13 +11,6 @@ import androidx.viewpager.widget.ViewPager
 import com.example.recipeteam.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -27,10 +20,10 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_main)
 
-        var container = findViewById<ViewPager>(R.id.container)
         var tabs = findViewById<TabLayout>(R.id.tabs)
         var flbtn = findViewById<FloatingActionButton>(R.id.fabNewPost)
         var boardRecyclerView: RecyclerView = findViewById(R.id.recyclerBoardList)
+        var savedId = intent.getStringExtra("savedId")
 
         tabs.addTab(tabs.newTab().setText("게시글"))
         tabs.addTab(tabs.newTab().setText("내가 쓴 글"))
@@ -38,6 +31,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
         flbtn.setOnClickListener{
             val intent = Intent(this, PostActivity::class.java)
+            intent.putExtra("savedId", savedId)
             startActivity(intent)
         }
 

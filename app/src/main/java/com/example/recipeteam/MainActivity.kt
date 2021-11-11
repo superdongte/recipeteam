@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         var btnReceipe=findViewById<Button>(R.id.btnCook)
         var btnBoard=findViewById<Button>(R.id.btnBoard)
+        var savedId= intent.getStringExtra("savedId")
 
         btnReceipe.setOnClickListener {
             val intent= Intent(this, CookListAcitivity::class.java)
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         btnBoard.setOnClickListener {
             val intent= Intent(this,BoardActivity::class.java)
+            intent.putExtra("savedId", savedId)
             startActivity(intent)
         }
     }

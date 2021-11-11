@@ -13,7 +13,7 @@ interface PostService {
     @POST("/boardinsert")
     fun insertPost(
         @Body post: Post
-    ):Call<PostList>
+    ):Call<Post>
 
     fun getPost(
         @Query("title") title: String
