@@ -27,7 +27,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_board_main)
+        setContentView(R.layout.board_list)
 
         var container = findViewById<ViewPager>(R.id.container)
         var tabs = findViewById<TabLayout>(R.id.tabs)

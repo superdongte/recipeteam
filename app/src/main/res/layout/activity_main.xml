@@ -5,20 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:layout_margin="20dp"
+
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메인폐이지"
+        android:layout_gravity="center"
+        android:textSize="50dp"
+        android:layout_marginTop="70dp"
+        />
+
+
 
    <Button
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:id="@+id/btnCook"
-       android:text="요리레시피로 이동"/>
+       android:text="요리레시피로 이동"
+       android:textSize="30dp"
+       android:layout_marginTop="70dp"/>
 
        <Button
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:id="@+id/btnBoard"
-        android:text="게시판으로 이동"/>
+           android:text="게시판으로 이동"
+           android:textSize="30dp"
+           android:layout_marginTop="30dp"/>
 
 
 </LinearLayout>
