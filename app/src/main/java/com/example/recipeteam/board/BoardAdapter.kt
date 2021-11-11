@@ -15,7 +15,7 @@ class BoardAdapter(val postList: ArrayList<PostList>) :
 RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_post, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.board_post_list, parent, false)
         return ViewHolder(view)
     }
 
@@ -32,7 +32,7 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val authimg = itemView.findViewById<ImageView>(R.id.postAuthorPhoto)
+        val authimg = itemView.findViewById<ImageView>(R.id.postImg)
         val author = itemView.findViewById<TextView>(R.id.postAuthor)
         val title = itemView.findViewById<TextView>(R.id.postTitle)
         val content = itemView.findViewById<TextView>(R.id.postBody)

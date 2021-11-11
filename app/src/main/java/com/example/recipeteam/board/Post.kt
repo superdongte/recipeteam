@@ -8,4 +8,4 @@ data class Post (
     val title: String,
     val content: String,
     val regdate: String
-        )
+    )
