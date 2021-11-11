@@ -7,7 +7,7 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface PostService {
-    /*@GET("/list")
+ /*   @GET("/list")
     fun getPost(): Call<PostList>
 
     @POST("/insert")

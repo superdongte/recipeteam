@@ -9,7 +9,7 @@
     android:background="@drawable/backgound_round_white">
 
     <ImageView
-        android:id="@+id/recipeImg"
+        android:id="@+id/recipe_img"
         android:layout_width="98dp"
         android:layout_height="78dp"
         android:layout_marginStart="5dp"
@@ -19,7 +19,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/recipeName"
+        android:id="@+id/recipe_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="요리 레시피 이름"

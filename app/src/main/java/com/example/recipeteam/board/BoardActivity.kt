@@ -11,6 +11,13 @@ import androidx.viewpager.widget.ViewPager
 import com.example.recipeteam.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -36,10 +43,6 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }
 
-        for (i in 1..10) {
-            var mypost = Post("21342", "author", "title", "content", "20211110")
-            this.postList.add(mypost)
-        }
 
 /*
         boardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -47,8 +50,27 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
         boardRecyclerView.adapter = boardAdapter*/
 
-
     }
+/*
+
+    private fun request() {
+        val baseURL = ""
+        var gson1 : Gson = GsonBuilder().setLenient().create()
+        val retrofit = Retrofit
+            .Builder()
+            .baseUrl(baseURL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val service: retrofit.create(PostService::class.java)
+
+        service.getPost().enqueue(object: Callback<PostList>{
+            override fun onResponse(call: Call<PostList>, response: Response<PostList>) {
+                var postList1 = response.body()
+            }
+        })
+    }
+*/
 
     override fun onClick(p0: View?) {
         TODO("Not yet implemented")
