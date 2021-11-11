@@ -53,27 +53,34 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
         boardRecyclerView.adapter = BoardAdapter(postList)
 
-    }
-/*
 
-    private fun request() {
+
+    }
+
+
+   private fun request() {
         val baseURL = ""
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
             .baseUrl(baseURL)
+//            .addConverterFactory(GsonConverterFactory.create(gson1))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service: retrofit.create(PostService::class.java)
-
-        service.getPost().enqueue(object: Callback<PostList>{
+       // val service: retrofit.create(PostService::class.java)
+       val service = retrofit.create(PostService::class.java)
+        service.getPostList().enqueue(object: Callback<PostList>{
             override fun onResponse(call: Call<PostList>, response: Response<PostList>) {
                 var postList1 = response.body()
             }
+
+            override fun onFailure(call: Call<PostList>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
         })
     }
-*/
+
 
     override fun onClick(p0: View?) {
         TODO("Not yet implemented")
