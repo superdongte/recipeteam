@@ -28,8 +28,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         var boardRecyclerView: RecyclerView = findViewById(R.id.messagesList)
 
         tabs.addTab(tabs.newTab().setText("게시글"))
-        tabs.addTab(tabs.newTab().setText("전체 추천글"))
-        tabs.addTab(tabs.newTab().setText("나의 추천글"))
+        tabs.addTab(tabs.newTab().setText("내가 쓴 글"))
 
 
         flbtn.setOnClickListener{
