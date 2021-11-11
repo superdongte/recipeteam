@@ -42,11 +42,11 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             this.postList.add(mypost)
         }
 
-
+/*
         boardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         boardRecyclerView.setHasFixedSize(true)
 
-        boardRecyclerView.adapter = boardAdapter
+        boardRecyclerView.adapter = boardAdapter*/
 
 
     }
