@@ -28,6 +28,13 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
         holder.title.text = postList.get(position).title
         holder.content.text = postList.get(position).content
 
+        holder.itemView.setOnClickListener {
+            var intent = Intent(holder.itemView?.context, BoardDetail::class.java)
+            intent.putExtra("author", holder.author.text)
+            intent.putExtra("title", holder.title.text)
+            intent.putExtra("content", holder.content.text)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
 
     }
 
