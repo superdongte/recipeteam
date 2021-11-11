@@ -7,5 +7,5 @@ data class Post (
     val author: String,
     val title: String,
     val content: String,
-    val regdate: Date
+    val regdate: String
         )
