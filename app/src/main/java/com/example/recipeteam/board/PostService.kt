@@ -7,15 +7,15 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface PostService {
-   @GET("/list")
+    @GET("/list")
     fun getPostList(): Call<PostList>
 
     @POST("/insert")
     fun insertPost(
         @Body post: Post
-    ):Call<Post>
+    ): Call<Post>
 
     fun getPost(
         @Query("title") title: String
-    ):Call<String>
+    ): Call<String>
 }
