@@ -6,9 +6,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/colorPrimary"
     tools:context=".loginActivity">
 
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="40dp"
+        android:text="Login "
+
+        android:textStyle="bold"
+        android:layout_margin="60dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,20 +62,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin"
-        android:text="로그인"/>
+        android:text="로그인"
+        android:textSize="25dp"/>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="다른방식으로 로그인하시겠습니까"/>
+        android:text="다른방식으로 로그인하시겠습니까"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="회원이 아니십니까?"
+        android:textSize="20dp"/>
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnJoin"
-        android:text="회원가입하기"/>
+        android:text="회원가입하기"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"/>
 
 
 
