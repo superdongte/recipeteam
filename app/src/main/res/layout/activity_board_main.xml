@@ -12,13 +12,17 @@
         android:layout_height="wrap_content"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tabs"
+        android:layout_height="680dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="51dp"
         android:background="@color/main_background"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:clipToPadding="false"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/board_post_list" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabNewPost"
