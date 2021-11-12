@@ -1,7 +1,5 @@
-package com.example.recipeteam.recipe
+package com.example.recipeteam.user
 
-import UserInfoList
-import com.example.recipeteam.user.LoginReqDto
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -11,7 +9,7 @@ interface UserInfoService {
 
     @POST("/join")
     fun insetUserInfo(
-        @Body user:UserInfo,
+        @Body user: UserInfo,
         //@Query("name") name:String
 
     ): Call<UserInfo>
