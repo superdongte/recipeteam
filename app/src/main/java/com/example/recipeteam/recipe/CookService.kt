@@ -7,10 +7,10 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface CookService {
-    @GET("/cooklist")
+    @GET("/cook/list")
     fun getCookList(): Call<CookList>
 
-    @POST("/cookinsert")
+    @POST("/cook/insert")
     fun insertCookInfo(
         @Body cook: Cook
     ):Call<Cook>

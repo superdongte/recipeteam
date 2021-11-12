@@ -1,10 +1,13 @@
 package com.example.recipeteam.recipe
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
+import com.example.recipeteam.board.PostActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -20,6 +23,7 @@ class CookListAcitivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recipe_all_lists)
+        var flcbtn = findViewById<FloatingActionButton>(R.id.fabNewCook)
 
         /*val cookList = arrayListOf(
             CookView("title" ,R.drawable.ic_baseline_account_circle_24),
@@ -28,8 +32,13 @@ class CookListAcitivity : AppCompatActivity() {
             CookView("title" ,R.drawable.ic_baseline_account_circle_24)
         )*/
 
+        flcbtn.setOnClickListener {
+            val intent = Intent(this, RecipeRegister::class.java)
+            startActivity(intent)
+        }
+
         cookList = arrayListOf(
-            Cook(1234, "cname", "cimage", "crecipe", "cookcontent", 1)
+            Cook(1234, "cname", "cimage", "crecipe", "cookcontent")
         )
 
         var recyclerView : RecyclerView = findViewById(R.id.recyclerRecipeLists)
@@ -40,8 +49,8 @@ class CookListAcitivity : AppCompatActivity() {
     }
 
 
-    /*private fun request() {
-        val baseURL = ""
+    private fun request() {
+        val baseURL = "http://192.168.43.66:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
@@ -58,7 +67,7 @@ class CookListAcitivity : AppCompatActivity() {
                 for(i in 0..cookList1!!.datas.size-1) {
                     cookList = arrayListOf(
                         Cook(cookList1!!.datas.get(i).cookid, cookList1!!.datas.get(i).cname, cookList1!!.datas.get(i).cimage
-                        ,cookList1!!.datas.get(i).crecipe, cookList1!!.datas.get(i).cookcontent, cookList1!!.datas.get(i).crank)
+                        ,cookList1!!.datas.get(i).crecipe, cookList1!!.datas.get(i).cookcontent)
                     )
                 }
             }
@@ -67,7 +76,7 @@ class CookListAcitivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
-    }*/
+    }
 
 
 }

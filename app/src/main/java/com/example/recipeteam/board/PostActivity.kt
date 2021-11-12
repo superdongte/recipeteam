@@ -45,7 +45,7 @@ class PostActivity : AppCompatActivity() {
         }
     }
 
-    /*private fun postinsert() {
+    private fun postinsert() {
         val baseURL = ""
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
@@ -68,5 +68,5 @@ class PostActivity : AppCompatActivity() {
                 }
 
             })
-    }*/
+    }
 }

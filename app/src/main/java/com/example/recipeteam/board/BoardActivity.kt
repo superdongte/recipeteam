@@ -11,6 +11,13 @@ import androidx.viewpager.widget.ViewPager
 import com.example.recipeteam.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -56,7 +63,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-/*
+
 
    private fun request() {
         val baseURL = ""
@@ -70,7 +77,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
        // val service: retrofit.create(PostService::class.java)
        val service = retrofit.create(PostService::class.java)
-        service.getPostList().enqueue(object: Callback<PostList>{
+        service.getPostList().enqueue(object: Callback<PostList> {
             override fun onResponse(call: Call<PostList>, response: Response<PostList>) {
                 var postList1 = response.body()
                 for(i in 0..postList1!!.datas.size-1) {
@@ -86,7 +93,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
     }
-*/
+
 
 
 

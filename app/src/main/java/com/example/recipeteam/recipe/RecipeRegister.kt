@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.recipeteam.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -26,14 +27,14 @@ class RecipeRegister : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recipe_register)
+        setContentView(R.layout.recipe_post)
 
 
 
 
-        var fab=findViewById<View>(R.id.fabNewPost)
+        var fab=findViewById<FloatingActionButton>(R.id.fabNewCookPost)
 
-       fab.setOnClickListener {view->
+       fab.setOnClickListener {
             Toast.makeText(applicationContext,"등록이 완료되었습니다",Toast.LENGTH_SHORT)
            val intent= Intent(this,CookListAcitivity::class.java)
            startActivity(intent)
@@ -44,7 +45,7 @@ class RecipeRegister : AppCompatActivity() {
     }
 /*
     private fun recipeinsert() {
-        val baseURL = ""
+        val baseURL = "http://192.168.43.66:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
@@ -69,5 +70,7 @@ class RecipeRegister : AppCompatActivity() {
             })
 
 
-    }*/
+    }
+
+    */
 }
