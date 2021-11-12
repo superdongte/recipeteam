@@ -55,7 +55,7 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
     }
 
     private fun recipeinsert() {
-        val baseURL = "http://192.168.43.66:8077"
+        val baseURL = "http://10.100.204.69:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
