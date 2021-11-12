@@ -48,6 +48,7 @@ class CookListAcitivity : AppCompatActivity() {
         recyclerView.adapter = CookAdapter(cookList)
     }
 
+/*
 
     private fun request() {
         val baseURL = "http://192.168.43.66:8077"
@@ -77,6 +78,7 @@ class CookListAcitivity : AppCompatActivity() {
             }
         })
     }
+*/
 
 
 }

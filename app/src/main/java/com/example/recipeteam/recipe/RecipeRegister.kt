@@ -32,9 +32,9 @@ class RecipeRegister : AppCompatActivity() {
 
 
 
-        var fab=findViewById<FloatingActionButton>(R.id.fabNewCookPost)
+        var facpbtn=findViewById<FloatingActionButton>(R.id.fabNewCookPost)
 
-       fab.setOnClickListener {
+       facpbtn.setOnClickListener {
             Toast.makeText(applicationContext,"등록이 완료되었습니다",Toast.LENGTH_SHORT)
            val intent= Intent(this,CookListAcitivity::class.java)
            startActivity(intent)

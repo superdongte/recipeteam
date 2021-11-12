@@ -28,7 +28,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" /> <!-- board & comment & post -->
+            android:exported="true" />
+        <!-- board & comment & post -->
         <activity
             android:name=".board.BoardActivity"
             android:exported="true" />
