@@ -48,7 +48,7 @@
         android:src="@android:drawable/ic_menu_edit"
         app:backgroundTint="@color/colorPrimary"
         app:tint="#FFFFFF"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:ignore="SpeakableTextPresentCheck"
         tools:layout_editor_absoluteX="339dp"
         tools:layout_editor_absoluteY="646dp" />
 

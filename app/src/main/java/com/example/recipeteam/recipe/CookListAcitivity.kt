@@ -23,7 +23,8 @@ class CookListAcitivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recipe_all_lists)
-        var flcbtn = findViewById<FloatingActionButton>(R.id.fabNewCook)
+
+        var fcbtn = findViewById<FloatingActionButton>(R.id.fabNewCook)
 
         /*val cookList = arrayListOf(
             CookView("title" ,R.drawable.ic_baseline_account_circle_24),
@@ -32,10 +33,11 @@ class CookListAcitivity : AppCompatActivity() {
             CookView("title" ,R.drawable.ic_baseline_account_circle_24)
         )*/
 
-        flcbtn.setOnClickListener {
+        fcbtn.setOnClickListener {
             val intent = Intent(this, RecipeRegister::class.java)
             startActivity(intent)
         }
+
 
         cookList = arrayListOf(
             Cook(1234, "cname", "cimage", "crecipe", "cookcontent")

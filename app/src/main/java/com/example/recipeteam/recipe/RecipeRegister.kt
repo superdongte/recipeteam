@@ -17,7 +17,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RecipeRegister : AppCompatActivity() {
+class RecipeRegister : AppCompatActivity(),View.OnClickListener {
 
     var recipeUid: Int = 0
     lateinit var recipeName: EditText
@@ -35,13 +35,16 @@ class RecipeRegister : AppCompatActivity() {
         var facpbtn=findViewById<FloatingActionButton>(R.id.fabNewCookPost)
 
        facpbtn.setOnClickListener {
-            Toast.makeText(applicationContext,"등록이 완료되었습니다",Toast.LENGTH_SHORT)
-           val intent= Intent(this,CookListAcitivity::class.java)
+           val intent= Intent(this, CookListAcitivity::class.java)
            startActivity(intent)
        }
 
 
 
+    }
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 /*
     private fun recipeinsert() {

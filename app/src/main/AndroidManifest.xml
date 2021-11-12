@@ -43,6 +43,9 @@
             android:name=".recipe.RecipeDetail"
             android:exported="true" />
         <activity
+            android:name=".recipe.RecipeRegister"
+            android:exported="true" />
+        <activity
             android:name=".board.BoardDetail"
             android:exported="true" />
     </application>

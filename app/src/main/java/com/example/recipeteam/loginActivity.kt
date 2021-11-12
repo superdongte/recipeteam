@@ -51,6 +51,11 @@ class loginActivity : AppCompatActivity() {
 //               dlg.show()
 //            }
 //        }
+
+        btnLogin.setOnClickListener {
+            val intent=Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
         
 
             btnJoin.setOnClickListener{
