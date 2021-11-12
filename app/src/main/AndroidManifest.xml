@@ -23,7 +23,7 @@
             android:name=".recipe.CookListAcitivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,7 @@
             android:name=".JoinActivity"
             android:exported="false" />
         <activity
-            android:name=".loginActivity"
+            android:name=".MainActivity"
             android:exported="true" /> <!-- board & comment & post -->
         <activity
             android:name=".board.BoardActivity"
