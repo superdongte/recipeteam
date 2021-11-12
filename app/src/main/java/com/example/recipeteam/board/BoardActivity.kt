@@ -22,14 +22,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
     var postList = ArrayList<Post>()
-
+    lateinit var boardRecyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_main)
 
         var tabs = findViewById<TabLayout>(R.id.tabs)
         var flbtn = findViewById<FloatingActionButton>(R.id.fabNewPost)
-        var boardRecyclerView: RecyclerView = findViewById(R.id.recyclerBoardList)
+        boardRecyclerView = findViewById(R.id.recyclerBoardList)
         var savedId = intent.getStringExtra("savedId")
 
         tabs.addTab(tabs.newTab().setText("게시글"))
@@ -50,15 +50,17 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         )*/
 
         postList = arrayListOf(
-            Post("uid", "author", "title", "content", "20211111")
+            Post("1234", "author", "title", "content", "20211111")
         )
+
+
 
         boardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         boardRecyclerView.setHasFixedSize(true)
 
         boardRecyclerView.adapter = BoardAdapter(postList)
 
-
+        request()
 
     }
 
@@ -66,7 +68,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
 
    private fun request() {
-        val baseURL = ""
+        val baseURL = "http://172.30.1.15:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
@@ -80,14 +82,17 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         service.getPostList().enqueue(object: Callback<PostList> {
             override fun onResponse(call: Call<PostList>, response: Response<PostList>) {
                 var postList1 = response.body()
-                var headers = response.headers()
-                var token = headers.getDate("Authorization")
+                //var headers = response.headers()
+                //var token = headers.getDate("Authorization")
                 for(i in 0..postList1!!.datas.size-1) {
-                    postList = arrayListOf(
+                    /*postList = arrayListOf(
                         Post(postList1!!.datas.get(i).uid, postList1!!.datas.get(i).author, postList1!!.datas.get(i).title,
                             postList1!!.datas.get(i).content, postList1!!.datas.get(i).regdate)
-                    )
+                    )*/
+                    postList.add(Post(postList1!!.datas.get(i).userid, postList1!!.datas.get(i).bauthor, postList1!!.datas.get(i).btitle,
+                        postList1!!.datas.get(i).bcontent, postList1!!.datas.get(i).bregdate))
                 }
+                boardRecyclerView.adapter = BoardAdapter(postList)
             }
 
             override fun onFailure(call: Call<PostList>, t: Throwable) {

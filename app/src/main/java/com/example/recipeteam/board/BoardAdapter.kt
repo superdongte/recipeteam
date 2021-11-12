@@ -20,15 +20,15 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.authimg.setImageResource(R.drawable.ic_action_account_circle_40)
-        holder.author.text = postList.get(position).author
-        holder.title.text = postList.get(position).title
-        holder.content.text = postList.get(position).content
+        holder.bauthor.text = postList.get(position).bauthor
+        holder.btitle.text = postList.get(position).btitle
+        holder.bcontent.text = postList.get(position).bcontent
 
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView?.context, BoardDetail::class.java)
-            intent.putExtra("author", holder.author.text)
-            intent.putExtra("title", holder.title.text)
-            intent.putExtra("content", holder.content.text)
+            intent.putExtra("author", holder.bauthor.text)
+            intent.putExtra("title", holder.btitle.text)
+            intent.putExtra("content", holder.bcontent.text)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
 
@@ -41,8 +41,8 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val authimg = itemView.findViewById<ImageView>(R.id.postImg)
-        val author = itemView.findViewById<TextView>(R.id.postAuthor)
-        val title = itemView.findViewById<TextView>(R.id.postTitle)
-        val content = itemView.findViewById<TextView>(R.id.postBody)
+        val bauthor = itemView.findViewById<TextView>(R.id.postAuthor)
+        val btitle = itemView.findViewById<TextView>(R.id.postTitle)
+        val bcontent = itemView.findViewById<TextView>(R.id.postBody)
     }
 }

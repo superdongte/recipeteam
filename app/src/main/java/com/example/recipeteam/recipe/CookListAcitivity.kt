@@ -62,7 +62,7 @@ class CookListAcitivity : AppCompatActivity() {
 
     private fun request1() {
         Toast.makeText(applicationContext, "request success", Toast.LENGTH_SHORT).show()
-        val baseURL = "http://10.100.204.69:8077"
+        val baseURL = "http://172.30.1.15:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
