@@ -29,7 +29,7 @@ class CookListAcitivity : AppCompatActivity() {
         setContentView(R.layout.recipe_all_lists)
 
         var fcbtn = findViewById<FloatingActionButton>(R.id.fabNewCook)
-        var rebtn = findViewById<Button>(R.id.recipe_btn)
+
 
         /*val cookList = arrayListOf(
             CookView("title" ,R.drawable.ic_baseline_account_circle_24),
@@ -43,9 +43,6 @@ class CookListAcitivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        rebtn.setOnClickListener {
-            request1()
-        }
 
 
         cookList = arrayListOf(
