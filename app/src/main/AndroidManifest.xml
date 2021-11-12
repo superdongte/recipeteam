@@ -3,6 +3,8 @@
     package="com.example.recipeteam">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -12,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Recipeteam">
+
+
         <activity
             android:name=".ConnectActivity"
             android:exported="false" />
@@ -32,8 +36,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-        <!-- board & comment & post -->
+            android:exported="true" /> <!-- board & comment & post -->
         <activity
             android:name=".board.BoardActivity"
             android:exported="true" />

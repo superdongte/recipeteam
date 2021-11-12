@@ -1,25 +1,24 @@
 package com.example.recipeteam.recipe
 
 import UserInfoList
+import com.example.recipeteam.user.LoginReqDto
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface UserInfoService {
     @GET("/list")
     fun getPeople(): Call<UserInfoList>
 
-    @POST("/insert")
+    @POST("/join")
     fun insetUserInfo(
         @Body user:UserInfo,
         //@Query("name") name:String
 
     ): Call<UserInfo>
-
+    @POST("/login")
     fun getUser(
-        @Query("id") id:String
-    ): Call<String>
+        @Field("username") username:String,
+        @Field("password") password:String
+    ): Call<LoginReqDto>
 
 }
