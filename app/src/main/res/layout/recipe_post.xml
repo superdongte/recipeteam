@@ -120,7 +120,7 @@
                 android:text="조리 내용" />
 
             <EditText
-                android:id="@+id/editTextTextMultiLine"
+                android:id="@+id/editContent"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_marginLeft="20dp"

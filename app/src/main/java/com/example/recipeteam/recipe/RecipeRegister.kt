@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.recipeteam.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,18 +24,24 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
     lateinit var recipeName: EditText
     lateinit var recipeRecipe: EditText
     lateinit var recipeContent: EditText
-    lateinit var recipeImage: Button
+    lateinit var recipeImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recipe_post)
 
+       // var btn = findViewById<Button>(R.id.btn)
 
+        recipeName = findViewById(R.id.editTitle)
+        recipeRecipe = findViewById(R.id.editIngredents)
+        recipeContent = findViewById(R.id.editContent)
+        recipeImage = findViewById(R.id.imageView2)
 
 
         var facpbtn=findViewById<FloatingActionButton>(R.id.fabNewCookPost)
 
        facpbtn.setOnClickListener {
+           recipeinsert()
            val intent= Intent(this, CookListAcitivity::class.java)
            startActivity(intent)
        }
@@ -46,7 +53,7 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
     override fun onClick(v: View?) {
         TODO("Not yet implemented")
     }
-/*
+
     private fun recipeinsert() {
         val baseURL = "http://192.168.43.66:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
@@ -75,5 +82,5 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
 
     }
 
-    */
+
 }
