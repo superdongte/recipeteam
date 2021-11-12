@@ -3,6 +3,7 @@ package com.example.recipeteam.recipe
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeteam.R
@@ -19,6 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CookListAcitivity : AppCompatActivity() {
 
     var cookList = ArrayList<Cook>()
+    lateinit var recyclerView : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,17 +45,20 @@ class CookListAcitivity : AppCompatActivity() {
             Cook(1234, "cname", "cimage", "crecipe", "cookcontent")
         )
 
-        var recyclerView : RecyclerView = findViewById(R.id.recyclerRecipeLists)
+
+        recyclerView = findViewById(R.id.recyclerRecipeLists)
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = CookAdapter(cookList)
+        request()
     }
 
 
 
     private fun request() {
-        val baseURL = "http://192.168.43.66:8077"
+        Toast.makeText(applicationContext, "success", Toast.LENGTH_SHORT).show()
+        val baseURL = "http://10.100.204.69:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
@@ -73,10 +78,11 @@ class CookListAcitivity : AppCompatActivity() {
                         ,cookList1!!.datas.get(i).crecipe, cookList1!!.datas.get(i).cookcontent)
                     )
                 }
+               // recyclerView.adapter = CookAdapter(cookList)
             }
 
             override fun onFailure(call: Call<CookList>, t: Throwable) {
-                TODO("Not yet implemented")
+                return Toast.makeText(applicationContext, "android test", Toast.LENGTH_SHORT).show()
             }
         })
     }

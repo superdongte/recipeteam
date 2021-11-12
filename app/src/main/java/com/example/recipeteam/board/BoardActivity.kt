@@ -80,6 +80,8 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         service.getPostList().enqueue(object: Callback<PostList> {
             override fun onResponse(call: Call<PostList>, response: Response<PostList>) {
                 var postList1 = response.body()
+                var headers = response.headers()
+                var token = headers.getDate("Authorization")
                 for(i in 0..postList1!!.datas.size-1) {
                     postList = arrayListOf(
                         Post(postList1!!.datas.get(i).uid, postList1!!.datas.get(i).author, postList1!!.datas.get(i).title,
