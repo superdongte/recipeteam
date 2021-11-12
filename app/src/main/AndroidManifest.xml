@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Recipeteam">
         <activity
+            android:name=".ConnectActivity"
+            android:exported="false" />
+        <activity
             android:name=".recipe.CookListAcitivity"
             android:exported="false" />
         <activity
