@@ -1,4 +1,4 @@
-package com.example.recipeteam.recipe
+package com.example.recipeteam.user
 
 data class UserInfo(
 

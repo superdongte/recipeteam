@@ -1,12 +1,12 @@
 package com.example.recipeteam
 
-import UserInfoList
+import com.example.recipeteam.user.UserInfoList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import com.example.recipeteam.recipe.UserInfo
-import com.example.recipeteam.recipe.UserInfoService
+import com.example.recipeteam.user.UserInfo
+import com.example.recipeteam.user.UserInfoService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Call

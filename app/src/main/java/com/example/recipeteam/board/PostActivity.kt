@@ -57,7 +57,7 @@ class PostActivity : AppCompatActivity() {
 
         var service = retrofit.create(PostService::class.java)
 
-        service.insertPost(Post(uid =uid1, author =author1, title =title1.toString(), content =content1.toString(), regdate = regdate1.toString()))
+        service.insertPost(Post(userid =uid1, bauthor =author1, btitle =title1.toString(), bcontent =content1.toString(), bregdate = regdate1.toString()))
             .enqueue(object : Callback<Post> {
                 override fun onResponse(call: Call<Post>, response: Response<Post>) {
                     var postList1 = response.body()
