@@ -15,10 +15,11 @@ interface UserInfoService {
         //@Query("name") name:String
 
     ): Call<UserInfo>
-    @POST("/login")
-    fun getUser(
-        @Field("username") username:String,
-        @Field("password") password:String
-    ): Call<LoginReqDto>
+//    @POST("/login")
+//    fun getUser(
+//        @Field("username") username:String,
+//        @Field("password") password:String
+//    ): Call<LoginReqDto>
+//
 
 }

@@ -21,7 +21,7 @@ class JoinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.join)
 
-        var EdtUsername=findViewById<EditText>(R.id.EditID)
+        var EdtUsername=findViewById<EditText>(R.id.Edtusername)
         val Edtemail=findViewById<EditText>(R.id.EdtEmail)
         var Edtpassword=findViewById<EditText>(R.id.EdtPassword)
         var EdtConPassword=findViewById<EditText>(R.id.EdtPasswordCheck)
@@ -44,13 +44,12 @@ class JoinActivity : AppCompatActivity() {
         EdtJoin.setOnClickListener {
             var pass1:String=Edtpassword.text.toString()
             var pass2:String=EdtConPassword.text.toString()
-            var name:String=EdtUsername.text.toString()
+            var username:String=EdtUsername.text.toString()
             var Email:String=Edtemail.text.toString()
 
 
 
-
-            if(name.isEmpty()||pass1.isEmpty()||pass2.isEmpty()||Email.isEmpty()){
+            if(username.isEmpty()||pass1.isEmpty()||pass2.isEmpty()||Email.isEmpty()){
                 var isBlank=true //비어있는가 확인
                 dlg.setMessage("모든 내용을 다입력하세요")
                 dlg.show()
@@ -76,8 +75,7 @@ class JoinActivity : AppCompatActivity() {
                         dlg.setMessage("회원가입하시겠습니까")
                         dlg.setIcon(R.mipmap.ic_launcher)
                         dlg.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
-                            intent.putExtra("username", 1)
-                            intent.putExtra("password",2 )
+
                             startActivity(intent)
                             finish()
                         })

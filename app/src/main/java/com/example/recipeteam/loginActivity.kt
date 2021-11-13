@@ -13,6 +13,8 @@ import androidx.appcompat.app.AlertDialog
 import com.example.recipeteam.board.BoardActivity
 import com.example.recipeteam.user.LoginReqDto
 import com.example.recipeteam.user.LoginService
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +27,7 @@ class loginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-        var InputId=findViewById<EditText>(R.id.EdtID)
+        var Inputusername=findViewById<EditText>(R.id.Edtusername)
         var InputPassword=findViewById<EditText>(R.id.EdtPassword)
         var btnJoin=findViewById<Button>(R.id.btnJoin)
         var btnLogin=findViewById<Button>(R.id.btnLogin)
@@ -33,9 +35,16 @@ class loginActivity : AppCompatActivity() {
         var IdCheck=false
         var PassCheck=false
         val intent=Intent(this,MainActivity::class.java)
+        var gson1 : Gson = GsonBuilder().setLenient().create()
+
+
+
+
+
 
         var retrofit = Retrofit.Builder()
             .baseUrl("http://10.100.204.33:8083")
+
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -49,10 +58,10 @@ class loginActivity : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener{
-            var username = InputId.text.toString()
+            var username = Inputusername.text.toString()
             var password = InputPassword.text.toString()
 
-            Log.e("Login",username)
+            Log.e("login",username)
             Log.e("비밀번호는",password)
 
             loginService.requestLogin(username, password).enqueue(object: Callback<LoginReqDto> {
@@ -64,16 +73,16 @@ class loginActivity : AppCompatActivity() {
                     dialog.show()
                 }
 
-                override fun onResponse(call: Call<LoginReqDto>, response: Response<LoginReqDto>) {
-                    login = response.body()
-                    var headers= response.headers()
-                    Log.d("LOGIN","username: "+login?.msg)
-                    Log.d("LOGIN","password : "+login?.code)
-                    var userList1 = response.body()
+                override fun onResponse(call: Call<LoginReqDto>, Jsonresponse: Response<LoginReqDto>) {
+
+                    var headers= Jsonresponse.headers()
+                    Log.d("login","username: "+login?.username)
+                    Log.d("login","password : "+login?.password)
+                    var login = Jsonresponse.body()
                     var dialog = AlertDialog.Builder(this@loginActivity)
-                    dialog.setTitle(login?.msg)
-                    dialog.setMessage(login?.code)
-                    dlg.setPositiveButton("확인",DialogInterface.OnClickListener { dialog, which ->
+                    dialog.setTitle(login?.username)
+                    dialog.setMessage(login?.password)
+                    dialog.setPositiveButton("확인",DialogInterface.OnClickListener { dialog, which ->
                         startActivity(intent)
                         finish()
 

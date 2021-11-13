@@ -83,7 +83,7 @@ class ConnectActivity : AppCompatActivity()
             .Builder()
             .baseUrl(baseURL)
 //            .addConverterFactory(GsonConverterFactory.create(gson1))
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson1))
             .build()
 
         val service = retrofit.create(UserInfoService::class.java)
