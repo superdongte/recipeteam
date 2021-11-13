@@ -25,12 +25,14 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
         holder.cimg.setImageResource(R.drawable.ic_baseline_account_circle_24)
         holder.cname.text = cookList.get(position).cname
         holder.ccontent.text = cookList.get(position).cookcontent
+        holder.crecipe.text = cookList.get(position).crecipe
 
         holder.itemView.setOnClickListener {
 
             var intent = Intent(holder.itemView?.context, RecipeDetail::class.java)
             intent.putExtra("cname", holder.cname.text)
             intent.putExtra("ccontent", holder.ccontent.text)
+            intent.putExtra("crecipe", holder.crecipe.text)
             //intent.putParcelableArrayListExtra("cookList", cookList)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
@@ -44,6 +46,7 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
         val cname = itemView.findViewById<TextView>(R.id.recipe_name)
         val cimg = itemView.findViewById<ImageView>(R.id.recipe_img)
         val ccontent = itemView.findViewById<TextView>(R.id.recipe_content)
+        val crecipe = itemView.findViewById<TextView>(R.id.recipe_recipe)
 
 
 

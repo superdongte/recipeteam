@@ -18,6 +18,10 @@ class RecipeDetail : AppCompatActivity() {
         val ccontent = intent.getStringExtra("ccontent")
         recipeContent.text = ccontent
 
+        var recipeRecipe = findViewById<TextView>(R.id.ingredients)
+        val crecipe = intent.getStringExtra("crecipe")
+        recipeRecipe.text = crecipe
+
         /*var recipeBody = findViewById<TextView>(R.id.post_content)
         val cookList = intent.getSerializableExtra("cookList") as ArrayList<Cook>
         recipeBody.text = cookList[3].toString()*/
