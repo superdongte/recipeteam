@@ -20,7 +20,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RecipeRegister : AppCompatActivity(),View.OnClickListener {
 
-    var recipeUid: Int = 0
     lateinit var recipeName: EditText
     lateinit var recipeRecipe: EditText
     lateinit var recipeContent: EditText
@@ -38,6 +37,7 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
         recipeImage = findViewById(R.id.imageView2)
 
 
+
         var facpbtn=findViewById<FloatingActionButton>(R.id.fabNewCookPost)
 
        facpbtn.setOnClickListener {
@@ -48,6 +48,7 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
 
 
 
+
     }
 
     override fun onClick(v: View?) {
@@ -55,6 +56,12 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
     }
 
     private fun recipeinsert() {
+        var rimage = recipeImage.setImageResource(R.drawable.ic_action_account_circle_40)
+        var rname = recipeName.text.toString()
+        var rcontent = recipeContent.text.toString()
+        var rrecipe = recipeRecipe.text.toString()
+
+
         val baseURL = "http://10.100.204.69:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
@@ -66,15 +73,20 @@ class RecipeRegister : AppCompatActivity(),View.OnClickListener {
 
         var service = retrofit.create(CookService::class.java)
 
-        service.insertCookInfo(Cook(cookid = recipeUid + 1, cname = recipeName.toString(), cimage = recipeImage.toString(),
-        crecipe = recipeRecipe.toString(), cookcontent = recipeContent.toString()))
+        service.insertCookInfo(Cook(cimage = "null", cname = rname,
+            cookcontent = rcontent, crecipe = rrecipe))
+       /* service.insertCookInfo(Cook(cookid = 3, cname = "cname5", cimage = "null",
+            crecipe = "recipe5", cookcontent = "content5"))*/
+        //service.insertCookInfo(Cook(cimage = "null", cname="cname5", cookcontent="content5", crecipe="crecipe5"))
             .enqueue(object : Callback<Cook> {
                 override fun onResponse(call: Call<Cook>, response: Response<Cook>) {
+                    Toast.makeText(applicationContext, "android insert response", Toast.LENGTH_SHORT).show()
                     var cookList1 = response.body()
                 }
 
                 override fun onFailure(call: Call<Cook>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    return Toast.makeText(applicationContext, "android insert fail", Toast.LENGTH_SHORT).show()
+
                 }
 
             })

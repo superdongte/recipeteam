@@ -39,14 +39,19 @@ class PostActivity : AppCompatActivity() {
         var fbtn = findViewById<FloatingActionButton>(R.id.fabSubmitPost)
 
         fbtn.setOnClickListener{
-            //postinsert()
+            postinsert()
             val intent = Intent(this, BoardActivity::class.java)
             startActivity(intent)
         }
     }
 
     private fun postinsert() {
-        val baseURL = ""
+        var btitle = title1.text.toString()
+        var bcontent = content1.text.toString()
+        uid1 = "testuid"
+        author1 = "testauthor"
+
+        val baseURL = "http://10.100.204.69:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
@@ -57,7 +62,7 @@ class PostActivity : AppCompatActivity() {
 
         var service = retrofit.create(PostService::class.java)
 
-        service.insertPost(Post(userid =uid1, bauthor =author1, btitle =title1.toString(), bcontent =content1.toString(), bregdate = regdate1.toString()))
+        service.insertPost(Post(userid =uid1, bauthor =author1, btitle =btitle, bcontent =bcontent, bregdate = regdate1.toString()))
             .enqueue(object : Callback<Post> {
                 override fun onResponse(call: Call<Post>, response: Response<Post>) {
                     var postList1 = response.body()

@@ -46,7 +46,7 @@ class CookListAcitivity : AppCompatActivity() {
 
 
         cookList = arrayListOf(
-            Cook(1234, "cname", "cimage", "crecipe", "cookcontent")
+            Cook("cimage", "cname", "cookcontent", "crecipe")
         )
 
         recyclerView = findViewById(R.id.recyclerRecipeLists)
@@ -62,7 +62,7 @@ class CookListAcitivity : AppCompatActivity() {
 
     private fun request1() {
         Toast.makeText(applicationContext, "request success", Toast.LENGTH_SHORT).show()
-        val baseURL = "http://172.30.1.15:8077"
+        val baseURL = "http://10.100.204.69:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()
@@ -81,8 +81,8 @@ class CookListAcitivity : AppCompatActivity() {
                         Cook(cookList1!!.datas.get(i).cookid, cookList1!!.datas.get(i).cname, cookList1!!.datas.get(i).cimage
                         ,cookList1!!.datas.get(i).crecipe, cookList1!!.datas.get(i).cookcontent)*/
                     cookList.add(
-                        Cook(cookList1!!.datas.get(i).cookid, cookList1!!.datas.get(i).cname, cookList1!!.datas.get(i).cimage
-                            ,cookList1!!.datas.get(i).crecipe, cookList1!!.datas.get(i).cookcontent)
+                        Cook(cookList1!!.datas.get(i).cimage, cookList1!!.datas.get(i).cname
+                            ,cookList1!!.datas.get(i).cookcontent, cookList1!!.datas.get(i).crecipe)
                     )
                     //Log.d("text", cookList1!!.datas.get(i).cname)
                     println(cookList1!!.datas.get(i).cname)
