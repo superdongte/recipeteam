@@ -8,7 +8,7 @@ interface UserInfoService {
     fun getPeople(): Call<UserInfoList>
 
     @POST("/join")
-    fun insetUserInfo(
+    fun insertUserInfo(
         @Body user: User,
         //@Query("name") name:String
 
