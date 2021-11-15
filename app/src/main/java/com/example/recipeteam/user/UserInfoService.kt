@@ -9,10 +9,10 @@ interface UserInfoService {
 
     @POST("/join")
     fun insetUserInfo(
-        @Body user: UserInfo,
+        @Body user: User,
         //@Query("name") name:String
 
-    ): Call<UserInfo>
+    ): Call<User>
 //    @POST("/login")
 //    fun getUser(
 //        @Field("username") username:String,
