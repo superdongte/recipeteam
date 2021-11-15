@@ -11,6 +11,7 @@ data class Cook (
     var cookcontent: String*/
     var cimage: String?,
     var cname: String,
+    var ctime: String,
     var cookcontent: String,
     var crecipe: String
         )

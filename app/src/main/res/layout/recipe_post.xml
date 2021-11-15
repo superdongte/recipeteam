@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/rel1"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_height="189dp"
         android:layout_marginTop="20dp"
         android:gravity="center">
 
@@ -31,7 +31,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn"
+            android:id="@+id/openGallerybtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -40,12 +40,12 @@
     </LinearLayout>
 
     <TableLayout
-        android:layout_width="368dp"
-        android:layout_height="389dp"
+        android:layout_width="378dp"
+        android:layout_height="420dp"
         android:layout_alignBottom="@+id/li1"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="-414dp"
+        android:layout_marginBottom="-444dp"
         android:orientation="vertical">
 
         <TableRow
@@ -65,7 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/backgound_round_white"
-                android:ems="10" />
+                android:ems="10"
+                android:gravity="center"
+                android:text="input" />
         </TableRow>
 
         <TableRow

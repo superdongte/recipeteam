@@ -1,9 +1,17 @@
 package com.example.recipeteam.board
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recipeteam.R
@@ -15,10 +23,12 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Exception
 import java.time.LocalDate
 import java.time.LocalDate.now
 
 class PostActivity : AppCompatActivity() {
+
 
     lateinit var title1 : EditText
     lateinit var content1 : EditText
@@ -30,6 +40,7 @@ class PostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_post)
+
 
         title1 = findViewById<EditText>(R.id.fieldTitle)
         content1 = findViewById<EditText>(R.id.fieldContent)
@@ -43,7 +54,10 @@ class PostActivity : AppCompatActivity() {
             val intent = Intent(this, BoardActivity::class.java)
             startActivity(intent)
         }
+
+
     }
+
 
     private fun postinsert() {
         var btitle = title1.text.toString()
@@ -51,7 +65,7 @@ class PostActivity : AppCompatActivity() {
         uid1 = "testuid"
         author1 = "testauthor"
 
-        val baseURL = "http://10.100.204.69:8077"
+        val baseURL = "http://172.30.1.2:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit
             .Builder()

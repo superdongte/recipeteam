@@ -12,7 +12,6 @@ import com.example.recipeteam.R
 
 class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdapter.CustomViewHolder>() {
 
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -26,6 +25,7 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
         holder.cname.text = cookList.get(position).cname
         holder.ccontent.text = cookList.get(position).cookcontent
         holder.crecipe.text = cookList.get(position).crecipe
+        holder.ctime.text = cookList.get(position).ctime
 
         holder.itemView.setOnClickListener {
 
@@ -33,6 +33,7 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
             intent.putExtra("cname", holder.cname.text)
             intent.putExtra("ccontent", holder.ccontent.text)
             intent.putExtra("crecipe", holder.crecipe.text)
+            intent.putExtra("ctime", holder.ctime.text)
             //intent.putParcelableArrayListExtra("cookList", cookList)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
@@ -47,10 +48,7 @@ class CookAdapter(val cookList: ArrayList<Cook>) : RecyclerView.Adapter<CookAdap
         val cimg = itemView.findViewById<ImageView>(R.id.recipe_img)
         val ccontent = itemView.findViewById<TextView>(R.id.recipe_content)
         val crecipe = itemView.findViewById<TextView>(R.id.recipe_recipe)
-
-
-
-
+        val ctime = itemView.findViewById<TextView>(R.id.recipe_time)
 
     }
 
