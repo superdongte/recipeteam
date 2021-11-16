@@ -23,12 +23,14 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
         holder.bauthor.text = postList.get(position).bauthor
         holder.btitle.text = postList.get(position).btitle
         holder.bcontent.text = postList.get(position).bcontent
+        holder.buserid.text = postList.get(position).userid
 
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView?.context, BoardDetail::class.java)
             intent.putExtra("author", holder.bauthor.text)
             intent.putExtra("title", holder.btitle.text)
             intent.putExtra("content", holder.bcontent.text)
+            intent.putExtra("username", holder.buserid.text)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
 
@@ -44,5 +46,6 @@ RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
         val bauthor = itemView.findViewById<TextView>(R.id.postAuthor)
         val btitle = itemView.findViewById<TextView>(R.id.postTitle)
         val bcontent = itemView.findViewById<TextView>(R.id.postBody)
+        var buserid = itemView.findViewById<TextView>(R.id.postuid)
     }
 }

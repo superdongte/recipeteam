@@ -30,7 +30,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
         var tabs = findViewById<TabLayout>(R.id.tabs)
         var flbtn = findViewById<FloatingActionButton>(R.id.fabNewPost)
         boardRecyclerView = findViewById(R.id.recyclerBoardList)
-        var savedId = intent.getStringExtra("savedId")
+        var username = intent.getStringExtra("username")
 
         tabs.addTab(tabs.newTab().setText("게시글"))
         tabs.addTab(tabs.newTab().setText("내가 쓴 글"))
@@ -38,7 +38,7 @@ class BoardActivity : AppCompatActivity(), View.OnClickListener {
 
         flbtn.setOnClickListener{
             val intent = Intent(this, PostActivity::class.java)
-            intent.putExtra("savedId", savedId)
+            intent.putExtra("username", username)
             startActivity(intent)
         }
 

@@ -11,8 +11,12 @@ class BoardDetail : AppCompatActivity() {
         setContentView(R.layout.activity_board_detail)
 
         var boardAuthor = findViewById<TextView>(R.id.board_author)
-        var author = intent.getStringExtra("author")
+        var author = intent.getStringExtra("username")
         boardAuthor.text = author
+
+        var boardUserid = findViewById<TextView>(R.id.board_userid)
+        var userid = intent.getStringExtra("username")
+        boardUserid.text = userid
 
         var boardTitle = findViewById<TextView>(R.id.board_title)
         var title = intent.getStringExtra("title")
@@ -21,5 +25,7 @@ class BoardDetail : AppCompatActivity() {
         var boardContent = findViewById<TextView>(R.id.board_content)
         var content = intent.getStringExtra("content")
         boardContent.text = content
+
+
     }
 }

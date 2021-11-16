@@ -1,18 +1,14 @@
 package com.example.recipeteam
 
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import com.example.recipeteam.board.BoardActivity
-import com.example.recipeteam.user.LoginReqDto
-import com.example.recipeteam.user.LoginService
+import com.example.recipeteam.user.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -22,7 +18,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class loginActivity : AppCompatActivity() {
-    var login:LoginReqDto? = null
+    var loginReqDto:LoginReqDto? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
@@ -35,16 +32,12 @@ class loginActivity : AppCompatActivity() {
         var IdCheck=false
         var PassCheck=false
         val intent=Intent(this,MainActivity::class.java)
+        val intent2= Intent(this,loginActivity::class.java)
         var gson1 : Gson = GsonBuilder().setLenient().create()
 
-
-
-
-
-
         var retrofit = Retrofit.Builder()
-            .baseUrl("http://10.100.204.33:8083")
-
+            .baseUrl("http://172.30.1.2:8077")
+            .addConverterFactory(NullOnEmptyConverterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -61,35 +54,53 @@ class loginActivity : AppCompatActivity() {
             var username = Inputusername.text.toString()
             var password = InputPassword.text.toString()
 
-            Log.e("login",username)
-            Log.e("비밀번호는",password)
 
-            loginService.requestLogin(username, password).enqueue(object: Callback<LoginReqDto> {
+            loginService.requestLogin(LoginReqDto(username = username, password = password, msg="", code="",roles="")).enqueue(object: Callback<LoginReqDto> {
+
+                override fun onResponse(call: Call<LoginReqDto>, response: Response<LoginReqDto>) {
+                    loginReqDto= response.body()
+                    var headers= response.headers()
+                    var token = headers.get("Authorization")
+                    Log.d("토큰은", token.toString())
+                    var dialog = AlertDialog.Builder(this@loginActivity)
+                    dialog.setTitle(loginReqDto?.username)
+                    dialog.setMessage(loginReqDto?.password)
+
+                    if(token != null){
+                        Log.d("body는",loginReqDto.toString())
+
+                        dialog.setTitle("어서오세요")
+                        dialog.setMessage("요리하러갑시다.")
+                        dialog.setPositiveButton("확인",DialogInterface.OnClickListener { dialog, which ->
+                            intent.putExtra("username", username)
+                            startActivity(intent)
+                            finish()
+                        })
+                    }else{
+                        dialog.setTitle("로그인에 실패하셨습니다")
+                        dialog.setMessage("아이디나 비밀번호를 확인해주세요")
+                        dialog.setNegativeButton("확인",DialogInterface.OnClickListener { dialog, which ->
+                            startActivity(intent2)
+                            finish()
+                        })
+                    }
+                    dialog.show()
+                }
+
                 override fun onFailure(call: Call<LoginReqDto>, t: Throwable) {
-
+                    t.printStackTrace();
+                    t.message?.let { it1 -> Log.e("Login", it1) }
+                    Log.e("Login", username);
+                    Log.e("password",password)
+                    Log.d("login","msg: "+loginReqDto?.username)
+                    Log.d("login","code : "+loginReqDto?.password)
                     var dialog = AlertDialog.Builder(this@loginActivity)
                     dialog.setTitle("에러")
                     dialog.setMessage("호출실패했습니다.")
                     dialog.show()
                 }
 
-                override fun onResponse(call: Call<LoginReqDto>, Jsonresponse: Response<LoginReqDto>) {
 
-                    var headers= Jsonresponse.headers()
-                    Log.d("login","username: "+login?.username)
-                    Log.d("login","password : "+login?.password)
-                    var login = Jsonresponse.body()
-                    var dialog = AlertDialog.Builder(this@loginActivity)
-                    dialog.setTitle(login?.username)
-                    dialog.setMessage(login?.password)
-                    dialog.setPositiveButton("확인",DialogInterface.OnClickListener { dialog, which ->
-                        startActivity(intent)
-                        finish()
-
-                    })
-
-                    dialog.show()
-                }
             })
         }
     }
@@ -125,7 +136,7 @@ class loginActivity : AppCompatActivity() {
 //               dlg.show()
 //            }
 //        }
-        
+
 
 
 

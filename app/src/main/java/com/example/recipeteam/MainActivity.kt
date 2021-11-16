@@ -28,10 +28,16 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("savedId", savedId)
             startActivity(intent)
         }*/
+
     }
 
     fun onClick_boardbtn(view: View) {
-        startActivity(Intent(this, BoardActivity::class.java))
+        var username = intent.getStringExtra("username")
+        //intent.putExtra("username", username)
+        //startActivity(Intent(this, BoardActivity::class.java))
+        val intent= Intent(this,BoardActivity::class.java)
+        intent.putExtra("username", username)
+        startActivity(intent)
     }
 
     fun onClick_cookbtn(view: View) {

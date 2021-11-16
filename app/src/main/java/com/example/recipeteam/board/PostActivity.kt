@@ -44,8 +44,8 @@ class PostActivity : AppCompatActivity() {
 
         title1 = findViewById<EditText>(R.id.fieldTitle)
         content1 = findViewById<EditText>(R.id.fieldContent)
-        uid1 = intent.getStringExtra("savedId").toString()
-        author1 = intent.getStringExtra("Email").toString()
+        uid1 = intent.getStringExtra("username").toString()
+        author1 = intent.getStringExtra("username").toString()
 
         var fbtn = findViewById<FloatingActionButton>(R.id.fabSubmitPost)
 
@@ -62,8 +62,10 @@ class PostActivity : AppCompatActivity() {
     private fun postinsert() {
         var btitle = title1.text.toString()
         var bcontent = content1.text.toString()
-        uid1 = "testuid"
-        author1 = "testauthor"
+        //uid1 = "testuid"
+        //author1 = "testauthor"
+        var ruid = uid1
+        var rauthor = author1
 
         val baseURL = "http://172.30.1.2:8077"
         var gson1 : Gson = GsonBuilder().setLenient().create()
@@ -76,7 +78,7 @@ class PostActivity : AppCompatActivity() {
 
         var service = retrofit.create(PostService::class.java)
 
-        service.insertPost(Post(userid =uid1, bauthor =author1, btitle =btitle, bcontent =bcontent, bregdate = regdate1.toString()))
+        service.insertPost(Post(userid =ruid, bauthor =rauthor, btitle =btitle, bcontent =bcontent, bregdate = regdate1.toString()))
             .enqueue(object : Callback<Post> {
                 override fun onResponse(call: Call<Post>, response: Response<Post>) {
                     var postList1 = response.body()
